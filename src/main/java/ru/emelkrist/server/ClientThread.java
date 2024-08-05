@@ -79,7 +79,7 @@ public class ClientThread extends Thread {
                 }
             }
             case LOGOUT -> {
-                serverManager.displayMessage(username + " is disconnected.");
+                serverManager.processMessage(ServerManager.notifSignal + username + " is disconnected." + ServerManager.notifSignal);
                 isConnected = false;
             }
             case WHOISIN -> {
