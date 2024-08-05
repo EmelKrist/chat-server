@@ -87,7 +87,9 @@ public class ClientThread extends Thread {
                 List<ClientThread> clientThreads = serverManager.getClientThreads();
                 for (int i = 0; i < clientThreads.size(); i++) {
                     ClientThread clientThread = clientThreads.get(i);
-                    writeMessage((i + 1) + ") " + clientThread.getUsername() + " since " + connectionDate);
+                    if(clientThread.isConnected) {
+                        writeMessage((i + 1) + ") " + clientThread.getUsername() + " since " + connectionDate);
+                    }
                 }
             }
         }
