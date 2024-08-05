@@ -20,8 +20,8 @@ public class ServerListener extends Thread {
                 String messageFromServer = sInput.readObject().toString();
                 clientManager.displayMessage(messageFromServer);
             } catch (IOException e) {
-                clientManager.displayMessage("Server has closed the connection");
-                break;
+                System.out.println("Server has closed the connection");
+                System.exit(0);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
